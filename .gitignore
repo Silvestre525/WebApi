@@ -1,0 +1,56 @@
+
+# Archivos y carpetas de compilaci�n
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Archivos de usuario y configuraci�n de Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuraci�n de Rider
+.idea/
+
+# Archivos de paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Archivos de log y temporales
+*.log
+*.tmp
+
+# Archivos de configuraci�n local
+appsettings.Development.json
+appsettings.Local.json
+
+# Archivos de publicaci�n
+publish/
+out/
+
+# Archivos de dependencias
+project.lock.json
+project.fragment.lock.json
+
+# Archivos de migraciones generados por EF Core
+Migrations/
+
+# Archivos de sistema
+Thumbs.db
+Desktop.ini
+
+# Archivos de Docker
+*.dbmdl
+
+# Archivos de test
+TestResults/
+*.coverage
+*.coveragexml
+
+# Archivos de configuraci�n de MacOS
+.DS_Store
