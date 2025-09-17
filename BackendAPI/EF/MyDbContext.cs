@@ -10,6 +10,8 @@ namespace BackendAPI.EF
 
         //Vamos agregando todos nuestro Modelos:
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Producto> Productos { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

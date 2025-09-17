@@ -3,7 +3,7 @@ using System.Security;
 
 namespace BackendAPI.Models
 {
-    public class Usuario
+    public class Usuario: BaseField
     {
         [Key]
         public long UsuarioId { get; set; }
