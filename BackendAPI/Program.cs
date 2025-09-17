@@ -9,6 +9,7 @@ namespace BackendAPI
         public static void Main(string[] args)
         {
 
+            //Esto es la configuracion de base de datos
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<MyDbContext>(options =>
