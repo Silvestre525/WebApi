@@ -46,9 +46,17 @@ namespace BackendAPI.Repositories
 
         }
 
-        ///Crear un repositorio de Usuario donde:
-
         //Se pueda buscar Usuario por Nombre
+        public List<UsuarioDTO>? BuscarUsuariosPorNombre(string nombre)
+        {
+            return _context.Usuarios
+                .Where(u => !u.isDeleted && u.nombre == nombre) // Filtra solo los que se llaman "nombre"
+                .Select(u => new UsuarioDTO
+                {
+                    nombre = u.nombre
+                }).ToList();
+        }
+
         //Se pueda buscar Usuario si el Apellido comienza con....
         //No se pueden mostrar los usuarios eliminados en ningún caso.
         //No se puede exponer ningún objeto del EF

@@ -6,5 +6,7 @@ namespace BackendAPI.Interface
     {
         UsuarioDTO? BuscarUsuarioId(long id);
         List<UsuarioDTO>? ObtenerTodosLosUsuarios();
+
+        List<UsuarioDTO>? BuscarUsuariosPorNombre(string nombre);
     }
 }

@@ -16,5 +16,11 @@ namespace BackendAPI.Controllers
             var queryRepository = _usuarioRepository.ObtenerTodosLosUsuarios();
             return queryRepository;
         }
+
+        [HttpGet("buscar-por-nombre/{nombre}", Name = "BuscarUsuariosPorNombre")]
+        public List<UsuarioDTO>? GetByName(string nombre)
+        {
+            return _usuarioRepository.BuscarUsuariosPorNombre(nombre);
+        }
     }
 }
