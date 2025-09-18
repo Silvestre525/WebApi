@@ -1,5 +1,7 @@
 
 using BackendAPI.EF;
+using BackendAPI.Interface;
+using BackendAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackendAPI
@@ -22,10 +24,15 @@ namespace BackendAPI
 
             // Add services to the container.
 
+
+            builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            
 
             var app = builder.Build();
 
