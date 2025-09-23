@@ -39,6 +39,7 @@ namespace BackendAPI.Repositories
                  select new UsuarioDTO
                  {
                      nombre = u.nombre,
+                     apellido = u.apellido
                  }
                  ).FirstOrDefault();
 
@@ -74,15 +75,13 @@ namespace BackendAPI.Repositories
         public List<UsuarioDTO>? BuscarUsuariosPorNombre(string nombre)
         {
             return _context.Usuarios
-                .Where(u => !u.isDeleted && u.nombre == nombre) // Filtra solo los que se llaman "nombre"
+                .Where(u => !u.isDeleted && u.nombre == nombre) 
                 .Select(u => new UsuarioDTO
                 {
-                    nombre = u.nombre
+                    nombre = u.nombre,
+                    apellido = u.apellido
                 }).ToList();
         }
 
-        //Se pueda buscar Usuario si el Apellido comienza con....
-        //No se pueden mostrar los usuarios eliminados en ningún caso.
-        //No se puede exponer ningún objeto del EF
     }
 }

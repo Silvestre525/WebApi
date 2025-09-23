@@ -17,7 +17,13 @@ namespace BackendAPI.Controllers
             return queryRepository;
         }
 
-        [HttpGet("buscar-por-nombre/{nombre}", Name = "BuscarUsuariosPorNombre")]
+        [HttpGet("BuscarId/{id}", Name = "BuscarId")]
+        public UsuarioDTO?GetById(long id)
+        {
+            return _usuarioRepository.BuscarUsuarioId(id);
+        }
+
+        [HttpGet("BuscarNombre/{nombre}", Name = "BuscarUsuariosPorNombre")]
         public List<UsuarioDTO>? GetByName(string nombre)
         {
             return _usuarioRepository.BuscarUsuariosPorNombre(nombre);
