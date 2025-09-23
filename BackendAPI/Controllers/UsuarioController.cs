@@ -41,5 +41,12 @@ namespace BackendAPI.Controllers
 
             return CreatedAtRoute("BuscarUsuariosPorNombre", new { nombre = creado.nombre }, creado);
         }
+
+        [HttpGet("buscar-por-edad/{edad}", Name = "BuscarUsuariosPorEdad")]
+        public List<UsuarioDTO>? GetByEdad(int edad)
+        {
+            return _usuarioRepository.BuscarUsuariosPorEdad(edad);
+        }
+
     }
 }

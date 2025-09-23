@@ -10,5 +10,7 @@ namespace BackendAPI.Interface
         List<UsuarioDTO>? BuscarUsuariosPorNombre(string nombre);
 
         UsuarioDTO CrearUsuario(UsuarioCreateDTO nuevoUsuario);
+
+        List<UsuarioDTO>? BuscarUsuariosPorEdad(int edad);
     }
 }

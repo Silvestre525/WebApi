@@ -13,6 +13,8 @@ namespace BackendAPI.Models
 
         public String apellido { get; set; }
 
+        public int edad { get; set; }   
+
 
     }
 }

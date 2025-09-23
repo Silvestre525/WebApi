@@ -14,6 +14,7 @@ namespace BackendAPI.Repositories
             {
                 nombre = nuevoUsuario.nombre,
                 apellido = nuevoUsuario.apellido,
+                edad = nuevoUsuario.edad,
                 isDeleted = false,
                 createdBy = "system",            
                 createdOn = DateTime.UtcNow      
@@ -25,7 +26,9 @@ namespace BackendAPI.Repositories
             // Retornamos un DTO para no exponer directamente el modelo
             return new UsuarioDTO
             {
-                nombre = usuario.nombre
+                nombre = usuario.nombre,
+                apellido = usuario.apellido,
+                edad = usuario.edad
             };
         } 
 
@@ -82,6 +85,20 @@ namespace BackendAPI.Repositories
                     apellido = u.apellido
                 }).ToList();
         }
+
+        public List<UsuarioDTO>? BuscarUsuariosPorEdad(int edad)
+        {
+            return _context.Usuarios
+                .Where(u => !u.isDeleted && u.edad == edad)
+                .Select(u => new UsuarioDTO
+                {
+                    nombre = u.nombre,
+                    apellido = u.apellido,
+                    edad = u.edad,
+                })
+                .ToList();
+        }
+
 
     }
 }
