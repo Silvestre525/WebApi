@@ -22,5 +22,18 @@ namespace BackendAPI.Controllers
         {
             return _usuarioRepository.BuscarUsuariosPorNombre(nombre);
         }
+
+        [HttpPost(Name = "CrearUsuario")]
+        public ActionResult<UsuarioDTO> CrearUsuario([FromBody] UsuarioCreateDTO usuarioNuevo)
+        {
+            if (usuarioNuevo == null)
+            {
+                return BadRequest("El usuario no puede ser nulo.");
+            }
+
+            var creado = _usuarioRepository.CrearUsuario(usuarioNuevo);
+
+            return CreatedAtRoute("BuscarUsuariosPorNombre", new { nombre = creado.nombre }, creado);
+        }
     }
 }
